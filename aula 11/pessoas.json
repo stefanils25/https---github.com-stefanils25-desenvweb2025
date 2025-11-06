@@ -1,0 +1,90 @@
+[
+    {
+        "nome": "José",
+        "sobrenome": "de Lima",
+        "email": "josedasilva@hotmail.com",
+        "senha": "123456",
+        "cidade": "Rio do Sul",
+        "estado": "SC"
+    },
+    {
+        "nome": "Stéfani",
+        "sobrenome": "dos Santos",
+        "email": "stefani.santos@unidavi.edu.br",
+        "senha": "5879",
+        "cidade": "Rio do Sul",
+        "estado": "SC"
+    },
+    {
+        "nome": "Luciléia",
+        "sobrenome": "de Lima",
+        "email": "lucidelima@gmail.com",
+        "senha": "15616",
+        "cidade": "Rio do Sul",
+        "estado": "SC"
+    },
+    {
+        "nome": "Robson",
+        "sobrenome": "de Lima",
+        "email": "robsondossantos@gmail.com",
+        "senha": "78956",
+        "cidade": "Rio do Sul",
+        "estado": "SC"
+    },
+    {
+        "nome": "Gabriel",
+        "sobrenome": "Tadeu",
+        "email": "gabriel.tadeu@unidavi.edu.br",
+        "senha": "7",
+        "cidade": "Rio do Sul",
+        "estado": "SC"
+    },
+    {
+        "nome": "João",
+        "sobrenome": "da Silva",
+        "email": "joaodasilva@hotmail.com",
+        "senha": "12356",
+        "cidade": "Sao Paulo",
+        "estado": "SP"
+    },
+    {
+        "nome": "Maria",
+        "sobrenome": "do Carmo",
+        "email": "mariacarmo@gmail.com",
+        "senha": "maria123",
+        "cidade": "Sao Paulo",
+        "estado": "SP"
+    },
+    {
+        "nome": "Francisco",
+        "sobrenome": "Rocha",
+        "email": "franciscorocha@gmail.com",
+        "senha": "chicorocha78",
+        "cidade": "Vidal Ramos",
+        "estado": "SC"
+    },
+    {
+        "nome": "Francisco",
+        "sobrenome": "Rocha",
+        "email": "franciscorocha@gmail.com",
+        "senha": "chicorocha78",
+        "cidade": "Vidal Ramos",
+        "estado": "SC"
+    },
+    {
+        "nome": "Pedro",
+        "sobrenome": "Souza",
+        "email": "pedro__souza@gmail.com",
+        "senha": "1977",
+        "cidade": "Curitiba",
+        "estado": "PR"
+    },
+    {
+        "nome": "Leticia",
+        "sobrenome": "Campos",
+        "email": "campos.le@hotmail.com",
+        "senha": "lecamp456",
+        "cidade": "Curitiba",
+        "estado": "PR"
+    }
+]

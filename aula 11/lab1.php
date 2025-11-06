@@ -1,0 +1,30 @@
+<?php 
+
+    define('DB_HOST', 'localhost');
+    define('DB_PORT', '5432');
+    define('DB_USER', 'postgres');
+    define('DB_PASS', 'postgres');
+    define('DB_NAME', 'local');
+
+    $connectionString = "host=".DB_HOST.
+                        " port=".DB_PORT.
+                        " dbname=".DB_NAME.
+                        " user=".DB_USER.
+                        " password=".DB_PASS;
+
+    //Estabelecer conexão
+    $condb = pg_connect($connectionString);
+    if(!$condb) {
+        echo "Erro ao conectar ao Banco de Dados.";
+    } else {
+        echo "Conexão bem-sucedida! <br>";
+    }
+
+    $result = pg_query($condb, "SELECT COUNT(*) AS QTDTABS FROM PG_TABLES");
+
+    while($row = pg_fetch_assoc($result)) {
+        echo "Número de tabelas no Banco de dados: " . $row['qtdtabs'];
+    }
+
+    
+?>
