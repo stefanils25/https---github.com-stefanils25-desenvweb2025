@@ -1,0 +1,20 @@
+Explicação de uso do sistema:
+
+- No arquivo "config.php" contém as credenciais do Banco de Dados;
+
+- Em "setup.sql", na pasta "sql", contém o código para criação das tabelas no Postgres;
+
+- Pasta "src", lógica do sistema:
+	- Arquivo "db.php", faz a conexão com o Banco de Dados;
+	- "funções.php" contém as funções necessárias para o funcionamento do sistema;
+	- "perguntas.php" puxa as perguntas cadastradas no Banco de Dados;
+	- "respostas.php" serve para armazenar as respostas e passar para a próxima pergunta;
+	- "session.php" serve para iniciar as variáveis de sessão;
+
+- Pasta "public", diretório público ao usuário:
+	- Pasta "css" com arquivo "style.css", para estilizar as telas;
+	- Pasta "js" com arquivo "script.js", para adicionar pequenas animações;
+	- Arquivo "index.php", tela principal que contém o formulário de avaliação;
+	- Arquivo "agradecimento.php" contém a tela de agradecimento depois que o formulário é respondido e enviado;
+	- Arquivo "responder.php" é apenas um arquivo de conexão com /public/responder.php --> /src/respostas.php
+
