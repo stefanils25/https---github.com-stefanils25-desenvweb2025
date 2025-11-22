@@ -1,0 +1,404 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header.titulo {
+    background-color: #003366;
+    color: white;
+    padding: 20px 0;
+}
+
+main {
+    margin-top: 40px;
+}
+
+.container {
+  font-size: 10px;
+}
+
+.pergunta {
+    background-color: white;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.resposta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.escala {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.escala label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 70px;
+    font-size: 0.85rem;
+    user-select: none;
+}
+
+.escala input[type="radio"] {
+    appearance: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    outline: none;
+    transition: 0.2s;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.escala input[value="1"]  { background-color: #e60000; }
+.escala input[value="2"]  { background-color: #ff1a1a; }
+.escala input[value="3"]  { background-color: #ff4d00; }
+.escala input[value="4"]  { background-color: #ff8000; }
+.escala input[value="5"]  { background-color: #ffa500; }
+.escala input[value="6"]  { background-color: #ffcc00; }
+.escala input[value="7"]  { background-color: #ffdb4d; }
+.escala input[value="8"]  { background-color: #c6e17f; }
+.escala input[value="9"]  { background-color: #66bb6a; }
+.escala input[value="10"] { background-color: #2e7d32; }
+
+.escala label:hover input[type="radio"] {
+    transform: scale(1.12);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+.escala input[type="radio"]:checked {
+    border: 3px solid #003366;
+    transform: scale(1.18);
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.resposta_opcional {
+    width: 90%;
+    max-width: 850px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.resposta_opcional input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+button {
+    margin-top: 5px;
+    padding: 7px 11px;
+    border: none;
+    background-color: #003366;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #0055aa;
+    transform: scale(1.05);
+}
+
+footer.rodape {
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #555;
+    padding-bottom: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%; /* Define a largura da tabela */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a[name="excluir"]:link {
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #dc3545; /* Vermelho para "remover" */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s; /* Transição suave */
+}
+a[name="excluir"]:hover {
+    background-color: #c82333; /* Tom mais escuro no hover */
+}
+
+/* Media queries para responsividade */
+@media (max-width: 500px) {
+    .escala label {
+        width: 55px;
+    }
+
+    .escala input[type="radio"] {
+        width: 30px;
+        height: 30px;
+    }
+
+    .pergunta {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+/* Responsividade para tablets (até 768px) */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Aumenta fonte base para melhor leitura */
+    }
+
+    header.titulo {
+        padding: 15px 0; /* Reduz padding */
+    }
+
+    .pergunta {
+        max-width: 90%; /* Ajusta largura para caber na tela */
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .escala {
+        gap: 8px; /* Reduz gap para caber mais itens */
+        margin: 20px 0;
+    }
+
+    .escala label {
+        width: 60px; /* Ajusta largura dos labels */
+        font-size: 0.8rem;
+    }
+
+    .escala input[type="radio"] {
+        width: 32px;
+        height: 32px;
+    }
+
+    .resposta_opcional {
+        width: 95%; /* Aumenta largura para tablets */
+    }
+
+    button {
+        padding: 10px 18px; /* Botão menor */
+        font-size: 0.9rem;
+    }
+
+    footer.rodape {
+        font-size: 0.8em;
+        padding-bottom: 15px;
+    }
+
+    /* Tabela responsiva para tablets */
+    .tabela-perguntas {
+        font-size: 12px; /* Fonte menor */
+        overflow-x: auto; /* Rolagem horizontal se necessário */
+    }
+
+    .celula-acoes {
+        flex-direction: row; /* Lado a lado em tablets */
+        flex-wrap: wrap;
+    }
+
+    .celula-acoes form {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+/* Responsividade para telas maiores (tablets grandes ou desktops, acima de 768px) */
+@media (min-width: 769px) {
+    .pergunta {
+        max-width: 700px; /* Aumenta largura em telas maiores */
+    }
+
+    .escala {
+        gap: 15px; /* Mais espaço */
+    }
+
+    .escala label {
+        width: 80px; /* Labels maiores */
+    }
+
+    .escala input[type="radio"] {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.escala label.ativo {
+    transform: scale(1.10);
+    font-weight: bold;
+}
+
+/* Estilos simples para a tabela (integrados ao tema) */
+.tabela-perguntas {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+    background-color: white; /* Fundo branco, como nas .pergunta */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Mesma sombra das .pergunta */
+    border-radius: 10px; /* Bordas arredondadas para combinar */
+    overflow: hidden; /* Para o border-radius funcionar */
+}
+
+/* Cabeçalho */
+.tabela-perguntas th {
+    background-color: #003366; /* Azul escuro do tema */
+    color: white;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Células do corpo */
+.tabela-perguntas td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Hover nas linhas */
+.tabela-perguntas tbody tr:hover {
+    background-color: #f0f4f8; /* Fundo leve, como o body */
+}
+
+/* Ações: empilhar verticalmente */
+.celula-acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.celula-acoes form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.celula-acoes input, .celula-acoes select {
+    padding: 5px;
+    border: 1px solid #aaa; /* Bordas como nos inputs do site */
+    border-radius: 6px; /* Bordas arredondadas */
+}
+
+.celula-acoes button {
+    padding: 5px 10px;
+    background-color: #003366; /* Azul do tema */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s; /* Transição como nos buttons */
+}
+
+.celula-acoes button:hover {
+    background-color: #0055aa; /* Hover como nos buttons */
+}
+
+/* ===========================================
+   Estilos específicos para index.php (página de avaliação)
+   =========================================== */
+   /* Ajustes para o header da página de avaliação */
+   header.titulo#titulo {
+       padding: 25px 0; /* Um pouco mais de padding para destaque */
+   }
+
+   /* Melhor espaçamento e foco na pergunta */
+   .pergunta#pergunta {
+       margin-bottom: 30px; /* Mais espaço antes da resposta */
+       text-align: left; /* Alinha texto à esquerda para melhor leitura */
+       padding: 25px;
+   }
+
+   .pergunta#pergunta h2 {
+       margin-bottom: 15px;
+       font-size: 1.2rem;
+   }
+
+   .pergunta#pergunta p {
+       font-size: 1rem;
+       line-height: 1.5; /* Melhor legibilidade */
+   }
+
+   /* Ajustes na resposta e escala para index.php */
+   .resposta#resposta {
+       max-width: 800px; /* Limita largura para foco */
+   }
+
+   .resposta#resposta label {
+       font-size: 1.1rem; /* Destaque no label principal */
+   }
+
+   .escala {
+       /* Já definido acima, mas aqui podemos ajustar para index.php se necessário */
+       /* Exemplo: gap maior em telas grandes para melhor toque */
+   }
+
+   /* Campo opcional com foco em acessibilidade */
+   .resposta_opcional {
+       margin-top: 20px;
+   }
+
+   .resposta_opcional label {
+       font-size: 0.9rem;
+       margin-bottom: 8px;
+   }
+
+   .resposta_opcional input {
+       font-size: 0.95rem;
+       box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Sombra interna para profundidade */
+   }
+
+   /* Footer específico para index.php */
+   footer.rodape#rodape {
+       margin-top: 50px;
+       font-style: italic; /* Estilo para anonimato */
+   }
+
+   
+   /* Responsividade extra para index.php em tablets */
+   @media (max-width: 768px) {
+       .pergunta#pergunta {
+           padding: 20px;
+           text-align: center; /* Centraliza em telas pequenas */
+       }
+
+       .resposta#resposta {
+           max-width: 95%;
+       }
+
+       .escala {
+           gap: 10px; /* Ajusta gap para toque fácil */
+       }
+   }
