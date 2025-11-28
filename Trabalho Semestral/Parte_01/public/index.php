@@ -26,46 +26,43 @@ $escala = getEscalaAvaliacao();
     <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
-    <header class="titulo" id="titulo">
-        <h1>Avaliação de Desempenho</h1>
-    </header>
 
-    <main>
-        <div class="pergunta" id="pergunta">
-            <!-- Exibe número e texto da pergunta atual -->
-            <h2>Pergunta <?php echo $_SESSION['pergunta_atual'] + 1; ?> de <?php echo count($perguntas); ?></h2>
-            <p><?php echo htmlspecialchars($perguntaAtual['texto']); ?></p>
-        </div>
+<?php include "components/header.php"; ?>
 
-        <div class="resposta" id="resposta">
-            <!-- Formulário de envio da nota -->
-            <form method="post" action="responder.php">
-                <input type="hidden" name="pergunta_id" value="<?php echo $perguntaAtual['id']; ?>">
+<main>
 
-                <label>Selecione sua avaliação:</label>
-                <div class="escala">
-                    <?php foreach ($escala as $valor => $descricao): ?>
-                        <label>
-                            <input type="radio" name="nota" value="<?php echo $valor; ?>" required>
-                            <?php echo $valor; ?><br><small><?php echo htmlspecialchars($descricao); ?></small>
-                        </label>
-                    <?php endforeach; ?>
-                </div>
+    <!-- Barra de Progresso -->
+    <div class="progresso-container">
+        <?php include "components/progresso.php"; ?>
+    </div>
 
-                <br>
-                <div class="resposta_opcional">
-                    <label for="opcional">Compartilhe livremente qualquer sugestão ou comentário que possa nos ajudar a evoluir.</label>
-                    <input type="text" name="opcional" id="opcional">
-                </div>
-                <button type="submit">Próxima</button>
-            </form>
-        </div>    
-    </main>
+    <!-- Pergunta -->
+    <div class="pergunta">
+        <h2>Pergunta <?php echo $_SESSION['pergunta_atual'] + 1; ?> de <?php echo count($perguntas); ?></h2>
+        <p><?php echo htmlspecialchars($perguntaAtual['texto']); ?></p>
+    </div>
 
-    <footer class="rodape" id="rodape">
-        <p>Sua avaliação é anônima — nenhuma informação pessoal é solicitada ou armazenada.</p>
-    </footer>
+    <!-- Formulário -->
+    <div class="resposta">
+        <form method="post" action="responder.php">
+            <input type="hidden" name="pergunta_id" value="<?php echo $perguntaAtual['id']; ?>">
 
-    <script src="../public/js/script.js"></script>
+            <!-- Escala -->
+            <?php include "components/escala.php"; ?>
+
+            <!-- Resposta opcional só na última pergunta -->
+            <?php if ($_SESSION['pergunta_atual'] == count($perguntas) - 1): ?>
+                <?php include "components/resposta_opcional.php"; ?>
+            <?php endif; ?>
+
+            <button type="submit">Próxima</button>
+        </form>
+    </div>
+
+</main>
+
+<?php include "components/footer.php"; ?>
+
+<script src="../public/js/script.js"></script>
 </body>
 </html>

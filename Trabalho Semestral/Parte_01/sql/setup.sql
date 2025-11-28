@@ -16,14 +16,8 @@ INSERT INTO perguntas (texto) VALUES
 ('Você se sentiu bem atendido de forma geral?'),
 ('Qual é a sua satisfação geral com o estabelecimento?');
 
-CREATE TABLE avaliacoes (
-    id SERIAL PRIMARY KEY,
-    data_avaliacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
 CREATE TABLE respostas (
     id SERIAL PRIMARY KEY,
-    avaliacao_id INT REFERENCES avaliacoes(id) ON DELETE CASCADE,
     pergunta_id INT REFERENCES perguntas(id) ON DELETE CASCADE,
     nota INT CHECK (nota BETWEEN 0 AND 10),
     resposta_opcional TEXT,
